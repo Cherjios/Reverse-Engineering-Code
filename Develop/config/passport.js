@@ -1,4 +1,13 @@
+//RequireJS is a JavaScript file and module loader. It is optimized for in-browser use, but it can be used in other JavaScript environments, 
+//like Rhino and Node. Using a modular script loader like RequireJS will improve the speed and quality of your code.
+
+// Passport is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based web application. 
+//A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more.
+
+// calling passport that requires passport
 var passport = require("passport");
+
+// calling LocalStrategy that require passport-local
 var LocalStrategy = require("passport-local").Strategy;
 
 var db = require("../models");
