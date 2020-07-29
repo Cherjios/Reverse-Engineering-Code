@@ -10,6 +10,7 @@ var passport = require("passport");
 // calling LocalStrategy that require passport-local
 var LocalStrategy = require("passport-local").Strategy;
 
+// db require modules in index.js and user.js
 var db = require("../models");
 
 // Telling passport we want to use a Local Strategy. In other words, we want login with a username/email and password
