@@ -25,11 +25,11 @@ $(document).ready(function() {
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
   function loginUser(email, password) {
-    $.post("l", {//This function will post on api/login the email and password input by the user 
+    $.post("/api/login", {//This function will post on api/login the email and password input by the user 
       email: email,
       password: password
     })
-      .then(function() {//This function will send the user to the route members
+      .then(function() {//This function will send the user to the route members after login
         window.location.replace("/members");
         // If there's an error, log the error
       })

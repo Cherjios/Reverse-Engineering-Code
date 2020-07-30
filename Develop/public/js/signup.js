@@ -25,19 +25,20 @@ $(document).ready(function() {
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
   function signUpUser(email, password) {
-    $.post("/api/signup", {
+    $.post("/api/signup", { //This function will post on api/signup the email and password input by the user
       email: email,
       password: password
     })
       .then(function(data) {
-        window.location.replace("/members");
+        window.location.replace("/members"); //This function will send the user to the route members after singing up
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
   }
 
   function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
+    // $("#alert .msg").text(err.responseJSON);
+    $("#alert .msg").text("Invalid");
     $("#alert").fadeIn(500);
   }
 });
