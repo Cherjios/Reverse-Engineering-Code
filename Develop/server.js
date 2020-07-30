@@ -11,7 +11,9 @@ var db = require("./models");
 // Creating express app and configuring middleware needed for authentication
 var app = express();
 app.use(express.urlencoded({ extended: true }));
+// method inbuilt in express to recognize the incoming Request Object as a JSON Object
 app.use(express.json());
+//use the following code to serve images, CSS files, and JavaScript files in a directory named public:
 app.use(express.static("public"));
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
