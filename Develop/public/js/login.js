@@ -6,13 +6,13 @@ $(document).ready(function() {
   var passwordInput = $("input#password-input"); //Referring to the password typed by the user
 
   // When the form is submitted, we validate there's an email and password entered
-  loginForm.on("submit", function(event) {
+  loginForm.on("submit", function(event) { //This function creates a module with the email and password typed by the user
     event.preventDefault();
     var userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
     };
-
+// This if statement makes function to return if either password and email are empty inputs 
     if (!userData.email || !userData.password) {
       return;
     }
