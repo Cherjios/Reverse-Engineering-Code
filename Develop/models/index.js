@@ -14,9 +14,9 @@ var env       = process.env.NODE_ENV || 'development';
 var config    = require(__dirname + '/../config/config.json')[env];
 var db        = {};
 
-if (config.use_env_variable) {
-  var sequelize = new Sequelize(process.env[config.use_env_variable]);
-} else {
+if (config.use_env_variable) { // if config use environment variable 
+  var sequelize = new Sequelize(process.env[config.use_env_variable]); // a new instance from Sequelize is created with the env variables
+} else { // a new instance from sequelize is created with the config variables from config.json
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
