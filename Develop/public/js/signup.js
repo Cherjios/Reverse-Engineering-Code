@@ -38,7 +38,7 @@ $(document).ready(function() {
 
   function handleLoginErr(err) {
     // $("#alert .msg").text(err.responseJSON);
-    $("#alert .msg").text("Invalid");
-    $("#alert").fadeIn(500);
+    $("#alert .msg").text("Invalid");// if there is any error an "Invalid" Messages will be display to the user
+    $("#alert").fadeIn(500);//500 Internal Server Error server error response code
   }
 });
