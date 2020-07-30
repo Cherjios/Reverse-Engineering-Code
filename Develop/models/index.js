@@ -12,7 +12,7 @@ var basename  = path.basename(module.filename);
 var env       = process.env.NODE_ENV || 'development';
 // Config calls the dependencies from the configuration file
 var config    = require(__dirname + '/../config/config.json')[env];
-var db        = {};
+var db        = {}; //empty obj called db
 
 if (config.use_env_variable) { // if config use environment variable 
   var sequelize = new Sequelize(process.env[config.use_env_variable]); // a new instance from Sequelize is created with the env variables
@@ -20,8 +20,8 @@ if (config.use_env_variable) { // if config use environment variable
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
-fs
-  .readdirSync(__dirname)
+fs //file system module
+  .readdirSync(__dirname) //Is used to synchronously read the contents of a given directory.
   .filter(function(file) {
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
