@@ -6,20 +6,20 @@ $(document).ready(function() {
   var passwordInput = $("input#password-input"); //Referring to the password typed by the user
 
   // When the signup button is clicked, we validate the email and password are not blank
-  signUpForm.on("submit", function(event) {
+  signUpForm.on("submit", function(event) { //This function creates a obj with the email and password typed by the user
     event.preventDefault();
     var userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
     };
-
+    // This if statement makes function to return if either password and email are empty inputs 
     if (!userData.email || !userData.password) {
       return;
     }
     // If we have an email and password, run the signUpUser function
     signUpUser(userData.email, userData.password);
-    emailInput.val("");
-    passwordInput.val("");
+    emailInput.val(""); //This will clear the input email form
+    passwordInput.val(""); //This will clear the input password form
   });
 
   // Does a post to the signup route. If successful, we are redirected to the members page
